@@ -88,8 +88,9 @@ async function sendUpdateEmail(appName) {
     }
   }
   
-  // schedule to run every 60 minutes
-setInterval(checkUpdates, 60 * 60 * 1000);
+// schedule to run every 6 hours
+setInterval(checkUpdates, 6 * 60 * 60 * 1000);
+
   
 // GET endpoint to fetch all data
 app.get('/apps', async (req, res) => {
@@ -248,7 +249,7 @@ app.listen(5000, () => console.log('Server listening on port 3000'));
 let cronJobCounter = 0;
 
 // This is the cron job that runs every 60 minutes
-cron.schedule('* * * * *', async () => {
+cron.schedule('0 */6 * * *', async () => {
     cronJobCounter++; // Increase the counter each time the job runs
     const apps = await AppData.find({});
   
