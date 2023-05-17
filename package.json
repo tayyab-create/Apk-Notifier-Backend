@@ -20,7 +20,7 @@
     "nodemailer": "^6.9.2",
     "nodemon": "^2.0.22",
     "xlsx": "^0.18.5"
-  }
+  },
   "engines": {
     "node": ">=14 <15"
   }
