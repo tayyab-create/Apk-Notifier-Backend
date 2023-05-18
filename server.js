@@ -15,9 +15,9 @@ const cheerio = require('cheerio');
 const upload = multer({ dest: 'uploads/' });
 
 // Connect to MongoDB
-mongoose.connect('mongodb://127.0.0.1:27017/myapp');
+//mongoose.connect('mongodb://127.0.0.1:27017/myapp');
 // You can use the following line to connect to a MongoDB Atlas cluster
-// mongoose.connect('mongodb://admin:admin@mindstudio-shard-00-00.lrz3u.mongodb.net:27017,mindstudio-shard-00-01.lrz3u.mongodb.net:27017,mindstudio-shard-00-02.lrz3u.mongodb.net:27017/?ssl=true&replicaSet=atlas-d6n22t-shard-0&authSource=admin&retryWrites=true&w=majority');
+mongoose.connect('mongodb://admin:admin@mindstudio-shard-00-00.lrz3u.mongodb.net:27017,mindstudio-shard-00-01.lrz3u.mongodb.net:27017,mindstudio-shard-00-02.lrz3u.mongodb.net:27017/?ssl=true&replicaSet=atlas-d6n22t-shard-0&authSource=admin&retryWrites=true&w=majority');
 const app = express();
 
 app.use(cors()); 
