@@ -326,10 +326,17 @@ app.get("/fetch-apps", async (req, res) => {
           const $ = cheerio.load(data);
 
           // Extract the APK version element
-          const apkVersion = $("span.spec-cont[itemprop='softwareVersion']")
-            .text()
-            .trim();
-          const cleanedApkVersion = apkVersion.replace(/^v/i, ""); // Remove 'v' from the beginning of the apkVersion
+          // const apkVersion = $("span.spec-cont[itemprop='softwareVersion']")
+          //   .text()
+          //   .trim();
+          // const cleanedApkVersion = apkVersion.replace(/^v/i, ""); // Remove 'v' from the beginning of the apkVersion
+
+          // Extract the APK version element
+const apkVersion = $("li:contains('Version') span.spec-cont")
+  .text()
+  .trim();
+const cleanedApkVersion = apkVersion.replace(/^v/i, ""); // Remove 'v' from the beginning of the apkVersion
+
 
           // Determine version update status
           const versionUpdateStatus =
