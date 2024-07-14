@@ -307,7 +307,7 @@ const getPostUrls = async (siteUrl) => {
 app.get("/fetch-apps", async (req, res) => {
   try {
     // Get post URLs and app names from the WordPress site
-    const appUrls = await getPostUrls("https://apkzalmi.com");
+    const appUrls = await getPostUrls("https://apkzalmi.net");
 
     for (const appUrl of appUrls) {
       try {
